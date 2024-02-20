@@ -4,6 +4,10 @@
  */
 package frm;
 
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 /**
  *
  * @author eduar
@@ -15,6 +19,174 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
      */
     public PantallaRegistrarUsuario() {
         initComponents();
+        
+        // Definir un color de fondo (gris azulado oscuro)
+        Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
+        // Cambiar el color de fondo del formulario
+        getContentPane().setBackground(grisAzuladoOscuro);
+        
+        // Agregar un FocusListener al campo txtNombre
+        txtNombre.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Nombre", borrarlo
+                if (txtNombre.getText().equals("Nombre(s)")) {
+                    txtNombre.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Nombre"
+                if (txtNombre.getText().isEmpty()) {
+                    txtNombre.setText("Nombre(s)");
+                }
+            }
+        });
+        
+        txtAPaterno.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Apellido Paterno", borrarlo
+                if (txtAPaterno.getText().equals("Apellido Paterno")) {
+                    txtAPaterno.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Apellido Paterno"
+                if (txtAPaterno.getText().isEmpty()) {
+                    txtAPaterno.setText("Apellido Paterno");
+                }
+            }
+        });
+        
+        txtAMaterno.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Apellido Materno", borrarlo
+                if (txtAMaterno.getText().equals("Apellido Materno")) {
+                    txtAMaterno.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Apellido Materno"
+                if (txtAMaterno.getText().isEmpty()) {
+                    txtAMaterno.setText("Apellido Materno");
+                }
+            }
+        });
+        
+        txtCalle.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Calle", borrarlo
+                if (txtCalle.getText().equals("Calle")) {
+                    txtCalle.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Calle"
+                if (txtCalle.getText().isEmpty()) {
+                    txtCalle.setText("Calle");
+                }
+            }
+        });
+        
+        txtCP.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Codigo Postal", borrarlo
+                if (txtCP.getText().equals("Codigo Postal")) {
+                    txtCP.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Codigo Postal"
+                if (txtCP.getText().isEmpty()) {
+                    txtCP.setText("Codigo Postal");
+                }
+            }
+        });
+        
+        txtNExt.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "No. Exterior", borrarlo
+                if (txtNExt.getText().equals("No. Exterior")) {
+                    txtNExt.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "No. Exterior"
+                if (txtNExt.getText().isEmpty()) {
+                    txtNExt.setText("No. Exterior");
+                }
+            }
+        });
+        
+        txtColonia.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Colonia", borrarlo
+                if (txtColonia.getText().equals("Colonia")) {
+                    txtColonia.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Colonia"
+                if (txtColonia.getText().isEmpty()) {
+                    txtColonia.setText("Colonia");
+                }
+            }
+        });
+        
+        txtFechaNac.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Fecha de Nacimiento (dd/mm/aaaa)", borrarlo
+                if (txtFechaNac.getText().equals("Fecha de Nacimiento (dd/mm/aaaa)")) {
+                    txtFechaNac.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Fecha de Nacimiento (dd/mm/aaaa)"
+                if (txtFechaNac.getText().isEmpty()) {
+                    txtFechaNac.setText("Fecha de Nacimiento (dd/mm/aaaa)");
+                }
+            }
+        });
+        
+        txtContraseña.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Nombre", borrarlo
+                if (txtContraseña.getText().equals("Contraseña")) {
+                    txtContraseña.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Nombre"
+                if (txtContraseña.getText().isEmpty()) {
+                    txtContraseña.setText("Contraseña");
+                }
+            }
+        });
     }
 
     /**
@@ -27,27 +199,15 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        campoTextoNombre = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        campoTextoApellidoP = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        campoTextoApellidoM = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        campoTextoCalle = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        campoTextoCP = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        campoTextoNum = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        campoTextoColonia = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        campoTextoFecha = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        campoTextoContraseña = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtAPaterno = new javax.swing.JTextField();
+        txtAMaterno = new javax.swing.JTextField();
+        txtCalle = new javax.swing.JTextField();
+        txtCP = new javax.swing.JTextField();
+        txtNExt = new javax.swing.JTextField();
+        txtColonia = new javax.swing.JTextField();
+        txtFechaNac = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JTextField();
         botonCancelar = new javax.swing.JButton();
         botonVaciar = new javax.swing.JButton();
         botonRegistrar = new javax.swing.JButton();
@@ -55,31 +215,32 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Registrar Usuario");
 
-        jLabel2.setText("Dirección");
+        txtNombre.setText("Nombre(s)");
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("Nombre(s)");
+        txtAPaterno.setText("Apellido Paterno");
 
-        jLabel4.setText("Apellido paterno");
+        txtAMaterno.setText("Apellido Materno");
+        txtAMaterno.setToolTipText("");
 
-        jLabel5.setText("Apellido materno");
+        txtCalle.setText("Calle");
 
-        jLabel6.setText("Nombre completo");
+        txtCP.setText("Codigo Postal");
 
-        jLabel7.setText("Calle");
+        txtNExt.setText("No. Exterior");
 
-        jLabel8.setText("Código postal");
+        txtColonia.setText("Colonia");
 
-        jLabel9.setText("No. exterior");
+        txtFechaNac.setText("Fecha de Nacimiento (dd/mm/aaaa)");
 
-        jLabel10.setText("Colonia");
-
-        jLabel11.setText("Fecha");
-
-        jLabel12.setText("Fecha de nacimiento");
-
-        jLabel13.setText("Contraseña");
+        txtContraseña.setText("Contraseña");
 
         botonCancelar.setText("Cancelar");
 
@@ -92,115 +253,67 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel2)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(122, 122, 122)
-                            .addComponent(jLabel1))
+                            .addComponent(botonCancelar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(botonVaciar)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonRegistrar))
                         .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(65, 65, 65)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel5)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jLabel10)
-                                        .addComponent(jLabel12)
-                                        .addComponent(jLabel13)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(30, 30, 30)
-                                    .addComponent(botonCancelar)))
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(campoTextoNombre)
-                                .addComponent(campoTextoApellidoP)
-                                .addComponent(campoTextoApellidoM)
-                                .addComponent(campoTextoCalle)
-                                .addComponent(campoTextoCP)
-                                .addComponent(campoTextoNum)
-                                .addComponent(campoTextoColonia)
-                                .addComponent(campoTextoFecha)
-                                .addComponent(campoTextoContraseña)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(botonVaciar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                                    .addComponent(botonRegistrar))))))
-                .addGap(32, 49, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(37, 37, 37)
-                    .addComponent(jLabel6)
-                    .addContainerGap(418, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtNExt)
+                                .addComponent(txtColonia)
+                                .addComponent(txtFechaNac, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                                .addComponent(txtContraseña)
+                                .addComponent(txtCP)
+                                .addComponent(txtCalle)
+                                .addComponent(txtAPaterno)
+                                .addComponent(txtAMaterno)
+                                .addComponent(txtNombre))
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(campoTextoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(campoTextoApellidoP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtAPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(campoTextoApellidoM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtAMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(txtCalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(txtCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(campoTextoCalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtNExt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(campoTextoCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtColonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(txtFechaNac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(campoTextoNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(campoTextoColonia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(campoTextoFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(campoTextoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonCancelar)
                     .addComponent(botonVaciar)
                     .addComponent(botonRegistrar))
-                .addGap(14, 14, 14))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(82, 82, 82)
-                    .addComponent(jLabel6)
-                    .addContainerGap(416, Short.MAX_VALUE)))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,27 +354,16 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JButton botonCancelar;
     private javax.swing.JButton botonRegistrar;
     private javax.swing.JButton botonVaciar;
-    private javax.swing.JTextField campoTextoApellidoM;
-    private javax.swing.JTextField campoTextoApellidoP;
-    private javax.swing.JTextField campoTextoCP;
-    private javax.swing.JTextField campoTextoCalle;
-    private javax.swing.JTextField campoTextoColonia;
-    private javax.swing.JTextField campoTextoContraseña;
-    private javax.swing.JTextField campoTextoFecha;
-    private javax.swing.JTextField campoTextoNombre;
-    private javax.swing.JTextField campoTextoNum;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField txtAMaterno;
+    private javax.swing.JTextField txtAPaterno;
+    private javax.swing.JTextField txtCP;
+    private javax.swing.JTextField txtCalle;
+    private javax.swing.JTextField txtColonia;
+    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JTextField txtFechaNac;
+    private javax.swing.JTextField txtNExt;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
+

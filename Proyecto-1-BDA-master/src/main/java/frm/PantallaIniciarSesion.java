@@ -4,6 +4,10 @@
  */
 package frm;
 
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 /**
  *
  * @author eduar
@@ -15,6 +19,51 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
      */
     public PantallaIniciarSesion() {
         initComponents();
+        
+        // Definir un color de fondo (gris azulado oscuro)
+        Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
+        // Cambiar el color de fondo del formulario
+        getContentPane().setBackground(grisAzuladoOscuro);
+        
+        
+        
+        // Agregar un FocusListener al campo txtID
+        txtID.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "ID", borrarlo
+                if (txtID.getText().equals("ID")) {
+                    txtID.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "ID"
+                if (txtID.getText().isEmpty()) {
+                    txtID.setText("ID");
+                }
+            }
+        });
+        
+        // Agregar un FocusListener al campo txtPass
+        txtPass.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                // Cuando se gana el foco, si el texto es igual a "Contraseña", borrarlo
+                if (txtPass.getText().equals("Contraseña")) {
+                    txtPass.setText("");
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                // Cuando se pierde el foco, si el texto está vacío, restaurar "Contraseña"
+                if (txtPass.getText().isEmpty()) {
+                    txtPass.setText("Contraseña");
+                }
+            }
+        });
     }
 
     /**
@@ -26,17 +75,63 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtID = new javax.swing.JTextField();
+        txtPass = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtID.setText("ID");
+
+        txtPass.setText("Contraseña");
+
+        jButton1.setText("Salir");
+
+        jButton2.setText("Aceptar");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Iniciar Sesion");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 8, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap())
         );
 
         pack();
@@ -78,5 +173,10 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtPass;
     // End of variables declaration//GEN-END:variables
 }

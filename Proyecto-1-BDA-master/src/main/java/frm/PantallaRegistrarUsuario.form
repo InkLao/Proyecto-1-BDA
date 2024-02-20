@@ -23,140 +23,68 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="jLabel1" alignment="0" min="-2" pref="277" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonCancelar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="botonVaciar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="botonRegistrar" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="botonCancelar" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtNExt" max="32767" attributes="0"/>
+                              <Component id="txtColonia" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtFechaNac" alignment="0" pref="277" max="32767" attributes="0"/>
+                              <Component id="txtContraseña" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtCP" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtCalle" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAPaterno" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAMaterno" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="campoTextoNombre" max="32767" attributes="0"/>
-                              <Component id="campoTextoApellidoP" max="32767" attributes="0"/>
-                              <Component id="campoTextoApellidoM" alignment="0" max="32767" attributes="0"/>
-                              <Component id="campoTextoCalle" alignment="0" max="32767" attributes="0"/>
-                              <Component id="campoTextoCP" alignment="0" max="32767" attributes="0"/>
-                              <Component id="campoTextoNum" alignment="0" max="32767" attributes="0"/>
-                              <Component id="campoTextoColonia" alignment="0" max="32767" attributes="0"/>
-                              <Component id="campoTextoFecha" alignment="0" max="32767" attributes="0"/>
-                              <Component id="campoTextoContraseña" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="botonVaciar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="101" max="32767" attributes="0"/>
-                                  <Component id="botonRegistrar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="32" pref="49" max="32767" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="418" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="txtNombre" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoApellidoP" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="txtAPaterno" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoApellidoM" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="txtAMaterno" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="txtCalle" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <Component id="txtCP" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoCalle" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="txtNExt" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoCP" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="txtColonia" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="txtFechaNac" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoNum" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoColonia" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoFecha" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoTextoContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <Component id="txtContraseña" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="botonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonVaciar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonRegistrar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="416" max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -167,86 +95,60 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="0"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Registrar Usuario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Direcci&#xf3;n"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JTextField" name="txtNombre">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre(s)"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoNombre">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JTextField" name="txtAPaterno">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Apellido paterno"/>
+        <Property name="text" type="java.lang.String" value="Apellido Paterno"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoApellidoP">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JTextField" name="txtAMaterno">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Apellido materno"/>
+        <Property name="text" type="java.lang.String" value="Apellido Materno"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoApellidoM">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre completo"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JTextField" name="txtCalle">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calle"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoCalle">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JTextField" name="txtCP">
       <Properties>
-        <Property name="text" type="java.lang.String" value="C&#xf3;digo postal"/>
+        <Property name="text" type="java.lang.String" value="Codigo Postal"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoCP">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JTextField" name="txtNExt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="No. exterior"/>
+        <Property name="text" type="java.lang.String" value="No. Exterior"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoNum">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JTextField" name="txtColonia">
       <Properties>
         <Property name="text" type="java.lang.String" value="Colonia"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoColonia">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JTextField" name="txtFechaNac">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha"/>
+        <Property name="text" type="java.lang.String" value="Fecha de Nacimiento (dd/mm/aaaa)"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel12">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha de nacimiento"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoFecha">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JTextField" name="txtContrase&#xf1;a">
       <Properties>
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="campoTextoContrase&#xf1;a">
     </Component>
     <Component class="javax.swing.JButton" name="botonCancelar">
       <Properties>
