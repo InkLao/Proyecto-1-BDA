@@ -12,4 +12,12 @@
         <exec.mainClass>com.mycompany.proyectobanco_228558.ProyectoBanco_228558</exec.mainClass>
     </properties>
     <name>proyectoBanco</name>
+    <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+    <dependencies>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
+    </dependencies>
 </project>
