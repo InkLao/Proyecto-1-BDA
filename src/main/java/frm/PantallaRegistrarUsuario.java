@@ -5,7 +5,7 @@
 package frm;
 
 /**
- *
+ * Hola, soy un test
  * @author eduar
  */
 public class PantallaRegistrarUsuario extends javax.swing.JFrame {
