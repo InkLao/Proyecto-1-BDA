@@ -1,19 +1,13 @@
 frm\PantallaTransferencia$1.class
 excepciones\PersistenciaException.class
-<<<<<<< HEAD
-=======
 frm\PantallaRetiroSinCuenta$1.class
->>>>>>> 7413f8efca2d94e45bbaac9e14394c37e8900862
 frm\PantallaRegistrarUsuario$10.class
 frm\PantallaRegistrarUsuario$8.class
 frm\PantallaRegistrarUsuario$4.class
 frm\PantallaRetiroSinCuentaCliente$3.class
 frm\PantallaRegistrarUsuario$3.class
 frm\PantallaRegistrarUsuario$9.class
-<<<<<<< HEAD
-=======
 frm\PantallaRetiroSinCuenta.class
->>>>>>> 7413f8efca2d94e45bbaac9e14394c37e8900862
 frm\PantallaIniciarSesion$1.class
 frm\PantallaMenuPrincipal$1.class
 frm\PantallaMenuUsuario$1.class
@@ -22,10 +16,7 @@ frm\PantallaRetiroSinCuentaCliente$2.class
 frm\PantallaTransferencia$3.class
 frm\PantallaMenuPrincipal.class
 objetos\Cliente.class
-<<<<<<< HEAD
-=======
 frm\PantallaRetiroSinCuenta$3.class
->>>>>>> 7413f8efca2d94e45bbaac9e14394c37e8900862
 frm\PantallaRegistrarUsuario$1.class
 frm\PantallaRegistrarUsuario.class
 frm\PantallaRegistrarUsuario$6.class
@@ -40,10 +31,7 @@ frm\PantallaLogin$1.class
 frm\PantallaRetiroSinCuentaCliente$1.class
 frm\PantallaIniciarSesion$2.class
 frm\PantallaLogin.class
-<<<<<<< HEAD
-=======
 frm\PantallaRetiroSinCuenta$2.class
->>>>>>> 7413f8efca2d94e45bbaac9e14394c37e8900862
 interfaces\IConexion.class
 frm\PantallaIniciarSesion.class
 com\mycompany\proyectobanco\proyectoBanco.class
