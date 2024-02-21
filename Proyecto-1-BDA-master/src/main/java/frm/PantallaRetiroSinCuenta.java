@@ -75,7 +75,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
 
         txtNumFolio = new javax.swing.JTextField();
         txtClave = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnRetirar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,7 +84,12 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
 
         txtClave.setText("Clave");
 
-        jButton1.setText("Retirar");
+        btnRetirar.setText("Retirar");
+        btnRetirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRetirarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,7 +111,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnRetirar)
                 .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
@@ -119,12 +124,16 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnRetirar)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRetirarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,7 +171,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRetirar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtClave;
     private javax.swing.JTextField txtNumFolio;

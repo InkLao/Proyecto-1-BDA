@@ -7,12 +7,22 @@ package frm;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * 
  * @author eduar
  */
 public class PantallaRegistrarUsuario extends javax.swing.JFrame {
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/banco";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
 
     /**
      * Creates new form PantallaRegistrarUsuario
@@ -156,7 +166,7 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
             @Override
             public void focusGained(FocusEvent e) {
                 // Cuando se gana el foco, si el texto es igual a "Fecha de Nacimiento (dd/mm/aaaa)", borrarlo
-                if (txtFechaNac.getText().equals("Fecha de Nacimiento (dd/mm/aaaa)")) {
+                if (txtFechaNac.getText().equals("Fecha de Nacimiento (aaaa/mm/dd)")) {
                     txtFechaNac.setText("");
                 }
             }
@@ -165,7 +175,7 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
             public void focusLost(FocusEvent e) {
                 // Cuando se pierde el foco, si el texto está vacío, restaurar "Fecha de Nacimiento (dd/mm/aaaa)"
                 if (txtFechaNac.getText().isEmpty()) {
-                    txtFechaNac.setText("Fecha de Nacimiento (dd/mm/aaaa)");
+                    txtFechaNac.setText("Fecha de Nacimiento (aaaa/mm/dd)");
                 }
             }
         });
@@ -199,7 +209,6 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
         txtAPaterno = new javax.swing.JTextField();
         txtAMaterno = new javax.swing.JTextField();
         txtCalle = new javax.swing.JTextField();
@@ -208,22 +217,16 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
         txtColonia = new javax.swing.JTextField();
         txtFechaNac = new javax.swing.JTextField();
         txtContraseña = new javax.swing.JTextField();
-        botonCancelar = new javax.swing.JButton();
-        botonVaciar = new javax.swing.JButton();
-        botonRegistrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        btnVaciar = new javax.swing.JButton();
+        txtNombre = new javax.swing.JTextField();
+        btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Registrar Usuario");
-
-        txtNombre.setText("Nombre(s)");
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
-            }
-        });
 
         txtAPaterno.setText("Apellido Paterno");
 
@@ -238,15 +241,22 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
 
         txtColonia.setText("Colonia");
 
-        txtFechaNac.setText("Fecha de Nacimiento (dd/mm/aaaa)");
+        txtFechaNac.setText("Fecha de Nacimiento (aaaa/mm/dd)");
 
         txtContraseña.setText("Contraseña");
 
-        botonCancelar.setText("Cancelar");
+        btnCancelar.setText("Cancelar");
 
-        botonVaciar.setText("Vaciar");
+        btnVaciar.setText("Vaciar");
 
-        botonRegistrar.setText("Registrar Usuario");
+        txtNombre.setText("Nombre(s)");
+
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -254,28 +264,24 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(botonCancelar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(botonVaciar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonRegistrar))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNExt)
-                                .addComponent(txtColonia)
-                                .addComponent(txtFechaNac, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                                .addComponent(txtContraseña)
-                                .addComponent(txtCP)
-                                .addComponent(txtCalle)
-                                .addComponent(txtAPaterno)
-                                .addComponent(txtAMaterno)
-                                .addComponent(txtNombre))
-                            .addGap(0, 0, Short.MAX_VALUE))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtNombre)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCancelar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnVaciar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistrar))
+                    .addComponent(txtNExt, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(txtColonia, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(txtFechaNac, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(txtContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(txtCP, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(txtCalle, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(txtAPaterno, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(txtAMaterno, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,7 +290,7 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(txtAPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtAMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,25 +308,127 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
                 .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonCancelar)
-                    .addComponent(botonVaciar)
-                    .addComponent(botonRegistrar))
+                    .addComponent(btnCancelar)
+                    .addComponent(btnVaciar)
+                    .addComponent(btnRegistrar))
                 .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
+        
+        // Obtener los datos del formulario
+        String nombre = txtNombre.getText();
+        String apPaterno = txtAPaterno.getText();
+        String apMaterno = txtAMaterno.getText();
+        String calle = txtCalle.getText();
+        String codigoPostal = txtCP.getText();
+        String numeroExterior = txtNExt.getText();
+        String colonia = txtColonia.getText();
+        String fechaNacimiento = txtFechaNac.getText();
+        String contraseña = txtContraseña.getText();
 
+        // Establecer la conexión a la base de datos
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            // Deshabilitar la confirmación automática para poder realizar transacciones
+            connection.setAutoCommit(false);
 
+            // Preparar la consulta SQL para insertar un nuevo cliente
+            String sqlCliente = "INSERT INTO cliente (nombres, ap_paterno, ap_materno, fechaNacimiento, contraseña) VALUES (?, ?, ?, ?, ?)";
+            try (PreparedStatement statementCliente = connection.prepareStatement(sqlCliente, Statement.RETURN_GENERATED_KEYS)) {
+                // Establecer los parámetros de la consulta para el cliente
+                statementCliente.setString(1, nombre);
+                statementCliente.setString(2, apPaterno);
+                statementCliente.setString(3, apMaterno);
+                statementCliente.setString(4, fechaNacimiento);
+                statementCliente.setString(5, contraseña);
 
+                // Ejecutar la consulta para el cliente
+                int filasInsertadasCliente = statementCliente.executeUpdate();
+
+                if (filasInsertadasCliente > 0) {
+                    // Obtener el ID del cliente recién insertado
+                    ResultSet generatedKeys = statementCliente.getGeneratedKeys();
+                    if (generatedKeys.next()) {
+                        long idCliente = generatedKeys.getLong(1);
+
+                        // Preparar la consulta SQL para insertar una nueva dirección
+                        String sqlDireccion = "INSERT INTO direccion (calle, colonia, codigoPostal, numeroExterior, idCliente) VALUES (?, ?, ?, ?, ?)";
+                        try (PreparedStatement statementDireccion = connection.prepareStatement(sqlDireccion)) {
+                            // Establecer los parámetros de la consulta para la dirección
+                            statementDireccion.setString(1, calle);
+                            statementDireccion.setString(2, colonia);
+                            statementDireccion.setString(3, codigoPostal);
+                            statementDireccion.setString(4, numeroExterior);
+                            statementDireccion.setLong(5, idCliente);
+
+                            // Ejecutar la consulta para la dirección
+                            int filasInsertadasDireccion = statementDireccion.executeUpdate();
+
+                            if (filasInsertadasDireccion > 0) {
+                                // Confirmar la transacción
+                                connection.commit();
+                                System.out.println("Cliente y dirección registrados exitosamente.");
+                                // Aquí podrías mostrar un mensaje de éxito o realizar alguna otra acción
+                            } else {
+                                System.out.println("Error al registrar dirección.");
+                                // Aquí podrías mostrar un mensaje de error o realizar alguna otra acción
+                            }
+                        }
+                    }
+                } else {
+                    System.out.println("Error al registrar cliente.");
+                    // Aquí podrías mostrar un mensaje de error o realizar alguna otra acción
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error de conexión o consulta: " + e.getMessage());
+            // Aquí podrías mostrar un mensaje de error o realizar alguna otra acción
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PantallaRetiroSinCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PantallaRetiroSinCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PantallaRetiroSinCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PantallaRetiroSinCuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PantallaRegistrarUsuario().setVisible(true);
+            }
+        });
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonCancelar;
-    private javax.swing.JButton botonRegistrar;
-    private javax.swing.JButton botonVaciar;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnVaciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtAMaterno;
     private javax.swing.JTextField txtAPaterno;

@@ -25,33 +25,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" alignment="0" min="-2" pref="277" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="botonCancelar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="botonVaciar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="botonRegistrar" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtNExt" max="32767" attributes="0"/>
-                              <Component id="txtColonia" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtFechaNac" alignment="0" pref="277" max="32767" attributes="0"/>
-                              <Component id="txtContraseña" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtCP" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtCalle" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtAPaterno" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtAMaterno" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="txtNombre" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnVaciar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="txtNExt" pref="277" max="32767" attributes="0"/>
+                  <Component id="txtColonia" alignment="0" pref="277" max="32767" attributes="0"/>
+                  <Component id="txtFechaNac" alignment="0" pref="277" max="32767" attributes="0"/>
+                  <Component id="txtContraseña" alignment="0" pref="277" max="32767" attributes="0"/>
+                  <Component id="txtCP" alignment="0" pref="277" max="32767" attributes="0"/>
+                  <Component id="txtCalle" alignment="0" pref="277" max="32767" attributes="0"/>
+                  <Component id="txtAPaterno" alignment="0" pref="277" max="32767" attributes="0"/>
+                  <Component id="txtAMaterno" alignment="0" pref="277" max="32767" attributes="0"/>
+                  <Component id="jLabel1" pref="277" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -62,7 +55,7 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="txtNombre" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="txtAPaterno" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="txtAMaterno" min="-2" max="-2" attributes="0"/>
@@ -80,9 +73,9 @@
               <Component id="txtContraseña" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="29" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="botonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="botonVaciar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="botonRegistrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnVaciar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRegistrar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
@@ -100,14 +93,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Registrar Usuario"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtNombre">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre(s)"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAPaterno">
       <Properties>
@@ -142,7 +127,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtFechaNac">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha de Nacimiento (dd/mm/aaaa)"/>
+        <Property name="text" type="java.lang.String" value="Fecha de Nacimiento (aaaa/mm/dd)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtContrase&#xf1;a">
@@ -150,20 +135,28 @@
         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="botonCancelar">
+    <Component class="javax.swing.JButton" name="btnCancelar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="botonVaciar">
+    <Component class="javax.swing.JButton" name="btnVaciar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Vaciar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="botonRegistrar">
+    <Component class="javax.swing.JTextField" name="txtNombre">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Registrar Usuario"/>
+        <Property name="text" type="java.lang.String" value="Nombre(s)"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRegistrar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

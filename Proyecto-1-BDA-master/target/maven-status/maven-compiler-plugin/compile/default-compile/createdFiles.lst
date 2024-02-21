@@ -15,6 +15,7 @@ datos\ConexionBD.class
 frm\PantallaRetiroSinCuentaCliente$2.class
 frm\PantallaTransferencia$3.class
 frm\PantallaMenuPrincipal.class
+frm\PantallaCrearCuenta$2.class
 objetos\Cliente.class
 frm\PantallaRetiroSinCuenta$3.class
 frm\PantallaRegistrarUsuario$1.class
@@ -26,9 +27,11 @@ frm\PantallaMenuUsuario.class
 frm\PantallaRegistrarUsuario$11.class
 frm\PantallaRegistrarUsuario$7.class
 interfaces\ICliente.class
+frm\PantallaCrearCuenta.class
 frm\PantallaIniciarSesion$3.class
 frm\PantallaLogin$1.class
 frm\PantallaRetiroSinCuentaCliente$1.class
+frm\PantallaCrearCuenta$1.class
 frm\PantallaIniciarSesion$2.class
 frm\PantallaLogin.class
 frm\PantallaRetiroSinCuenta$2.class
@@ -36,6 +39,7 @@ interfaces\IConexion.class
 frm\PantallaIniciarSesion.class
 com\mycompany\proyectobanco\proyectoBanco.class
 frm\PantallaRegistrarUsuario$2.class
+frm\PantallaRetiroSinCuenta$4.class
 frm\PantallaTransferencia$2.class
 datos\ClienteDAO.class
 frm\PantallaRetiroSinCuentaCliente.class
