@@ -26,12 +26,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panelRetiroSinCuenta" max="32767" attributes="0"/>
+                  <Component id="pnlRetiroSinCuenta" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="panelRegistrarse" min="-2" max="-2" attributes="0"/>
+                      <Component id="pnlRegistrarse" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="panelIniciarSesion" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pnlIniciarSesion" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -48,18 +48,18 @@
               <EmptySpace pref="15" max="32767" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="panelIniciarSesion" min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="pnlIniciarSesion" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelRegistrarse" min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="pnlRegistrarse" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelRetiroSinCuenta" min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="pnlRetiroSinCuenta" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="panelRegistrarse">
+    <Container class="javax.swing.JPanel" name="pnlRegistrarse">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -69,7 +69,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRegistrarseMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlRegistrarseMouseClicked"/>
       </Events>
 
       <Layout>
@@ -110,7 +110,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="panelRetiroSinCuenta">
+    <Container class="javax.swing.JPanel" name="pnlRetiroSinCuenta">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -120,7 +120,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRetiroSinCuentaMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlRetiroSinCuentaMouseClicked"/>
       </Events>
 
       <Layout>
@@ -161,7 +161,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="panelIniciarSesion">
+    <Container class="javax.swing.JPanel" name="pnlIniciarSesion">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -171,7 +171,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelIniciarSesionMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlIniciarSesionMouseClicked"/>
       </Events>
 
       <Layout>

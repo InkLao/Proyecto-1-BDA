@@ -31,110 +31,110 @@ public class PantallaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelRegistrarse = new javax.swing.JPanel();
+        pnlRegistrarse = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        panelRetiroSinCuenta = new javax.swing.JPanel();
+        pnlRetiroSinCuenta = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        panelIniciarSesion = new javax.swing.JPanel();
+        pnlIniciarSesion = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        panelRegistrarse.setBackground(new java.awt.Color(102, 102, 102));
-        panelRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelRegistrarse.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlRegistrarse.setBackground(new java.awt.Color(102, 102, 102));
+        pnlRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlRegistrarse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelRegistrarseMouseClicked(evt);
+                pnlRegistrarseMouseClicked(evt);
             }
         });
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel15.setText("Registrarse");
 
-        javax.swing.GroupLayout panelRegistrarseLayout = new javax.swing.GroupLayout(panelRegistrarse);
-        panelRegistrarse.setLayout(panelRegistrarseLayout);
-        panelRegistrarseLayout.setHorizontalGroup(
-            panelRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRegistrarseLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlRegistrarseLayout = new javax.swing.GroupLayout(pnlRegistrarse);
+        pnlRegistrarse.setLayout(pnlRegistrarseLayout);
+        pnlRegistrarseLayout.setHorizontalGroup(
+            pnlRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRegistrarseLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel15)
                 .addContainerGap(99, Short.MAX_VALUE))
         );
-        panelRegistrarseLayout.setVerticalGroup(
-            panelRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarseLayout.createSequentialGroup()
+        pnlRegistrarseLayout.setVerticalGroup(
+            pnlRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegistrarseLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel15))
                 .addGap(45, 45, 45))
         );
 
-        panelRetiroSinCuenta.setBackground(new java.awt.Color(102, 102, 102));
-        panelRetiroSinCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelRetiroSinCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlRetiroSinCuenta.setBackground(new java.awt.Color(102, 102, 102));
+        pnlRetiroSinCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlRetiroSinCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelRetiroSinCuentaMouseClicked(evt);
+                pnlRetiroSinCuentaMouseClicked(evt);
             }
         });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel16.setText("Retiro sin Cuenta");
 
-        javax.swing.GroupLayout panelRetiroSinCuentaLayout = new javax.swing.GroupLayout(panelRetiroSinCuenta);
-        panelRetiroSinCuenta.setLayout(panelRetiroSinCuentaLayout);
-        panelRetiroSinCuentaLayout.setHorizontalGroup(
-            panelRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRetiroSinCuentaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlRetiroSinCuentaLayout = new javax.swing.GroupLayout(pnlRetiroSinCuenta);
+        pnlRetiroSinCuenta.setLayout(pnlRetiroSinCuentaLayout);
+        pnlRetiroSinCuentaLayout.setHorizontalGroup(
+            pnlRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRetiroSinCuentaLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panelRetiroSinCuentaLayout.setVerticalGroup(
-            panelRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRetiroSinCuentaLayout.createSequentialGroup()
+        pnlRetiroSinCuentaLayout.setVerticalGroup(
+            pnlRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRetiroSinCuentaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel16))
                 .addGap(45, 45, 45))
         );
 
-        panelIniciarSesion.setBackground(new java.awt.Color(102, 102, 102));
-        panelIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlIniciarSesion.setBackground(new java.awt.Color(102, 102, 102));
+        pnlIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelIniciarSesionMouseClicked(evt);
+                pnlIniciarSesionMouseClicked(evt);
             }
         });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel17.setText("Iniciar Sesion");
 
-        javax.swing.GroupLayout panelIniciarSesionLayout = new javax.swing.GroupLayout(panelIniciarSesion);
-        panelIniciarSesion.setLayout(panelIniciarSesionLayout);
-        panelIniciarSesionLayout.setHorizontalGroup(
-            panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelIniciarSesionLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlIniciarSesionLayout = new javax.swing.GroupLayout(pnlIniciarSesion);
+        pnlIniciarSesion.setLayout(pnlIniciarSesionLayout);
+        pnlIniciarSesionLayout.setHorizontalGroup(
+            pnlIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIniciarSesionLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        panelIniciarSesionLayout.setVerticalGroup(
-            panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIniciarSesionLayout.createSequentialGroup()
+        pnlIniciarSesionLayout.setVerticalGroup(
+            pnlIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlIniciarSesionLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlIniciarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel17))
                 .addGap(45, 45, 45))
@@ -151,11 +151,11 @@ public class PantallaLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelRetiroSinCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlRetiroSinCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(panelRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(panelIniciarSesion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(pnlRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlIniciarSesion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -168,31 +168,31 @@ public class PantallaLogin extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(panelIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelRetiroSinCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlRetiroSinCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void panelIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIniciarSesionMouseClicked
+    private void pnlIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlIniciarSesionMouseClicked
         PantallaIniciarSesion pis = new PantallaIniciarSesion();
         pis.setVisible(true);
-    }//GEN-LAST:event_panelIniciarSesionMouseClicked
+    }//GEN-LAST:event_pnlIniciarSesionMouseClicked
 
-    private void panelRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarseMouseClicked
+    private void pnlRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRegistrarseMouseClicked
         PantallaRegistrarUsuario pru = new PantallaRegistrarUsuario();
         pru.setVisible(true);
-    }//GEN-LAST:event_panelRegistrarseMouseClicked
+    }//GEN-LAST:event_pnlRegistrarseMouseClicked
 
-    private void panelRetiroSinCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRetiroSinCuentaMouseClicked
+    private void pnlRetiroSinCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRetiroSinCuentaMouseClicked
         PantallaRetiroSinCuenta prsc = new PantallaRetiroSinCuenta();
         prsc.setVisible(true);
-    }//GEN-LAST:event_panelRetiroSinCuentaMouseClicked
+    }//GEN-LAST:event_pnlRetiroSinCuentaMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -202,8 +202,8 @@ public class PantallaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel panelIniciarSesion;
-    private javax.swing.JPanel panelRegistrarse;
-    private javax.swing.JPanel panelRetiroSinCuenta;
+    private javax.swing.JPanel pnlIniciarSesion;
+    private javax.swing.JPanel pnlRegistrarse;
+    private javax.swing.JPanel pnlRetiroSinCuenta;
     // End of variables declaration//GEN-END:variables
 }
