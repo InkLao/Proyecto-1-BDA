@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package frm;
 
 import java.awt.Color;
@@ -13,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  * 
@@ -371,8 +368,13 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
                             if (filasInsertadasDireccion > 0) {
                                 // Confirmar la transacción
                                 connection.commit();
-                                System.out.println("Cliente y dirección registrados exitosamente.");
-                                // Aquí podrías mostrar un mensaje de éxito o realizar alguna otra acción
+                                // Mostrar mensaje con el ID del cliente
+                            JOptionPane.showMessageDialog(this, "Su ID es el siguiente: " + idCliente);
+
+                            // Cerrar la ventana actual y abrir la ventana de login
+                            this.dispose(); // Cerrar la ventana actual
+                            PantallaLogin login = new PantallaLogin(); // Crear instancia de la ventana de login
+                            login.setVisible(true); // Mostrar la ventana de login
                             } else {
                                 System.out.println("Error al registrar dirección.");
                                 // Aquí podrías mostrar un mensaje de error o realizar alguna otra acción

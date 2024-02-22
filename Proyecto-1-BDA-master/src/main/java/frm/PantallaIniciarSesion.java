@@ -1,18 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package frm;
 
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
- * Test otra vez
+ * 
  * @author eduar
  */
 public class PantallaIniciarSesion extends javax.swing.JFrame {
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/banco";
+    private static final String USER = "banco";
+    private static final String PASSWORD = "12345678";
 
     /**
      * Creates new form PantallaIniciarSesion
@@ -77,8 +83,8 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
 
         txtID = new javax.swing.JTextField();
         txtPass = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnAceptar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,9 +93,19 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
 
         txtPass.setText("Contraseña");
 
-        jButton1.setText("Salir");
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Aceptar");
+        btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,9 +125,9 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
                         .addGap(0, 8, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1)
+                        .addComponent(btnSalir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                        .addComponent(btnAceptar)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
@@ -129,17 +145,72 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
                 .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnSalir)
+                    .addComponent(btnAceptar))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        this.dispose();
+        PantallaLogin pl = new PantallaLogin();
+        pl.setVisible(true);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        // Obtener el ID y la contraseña ingresados por el usuario
+        String id = txtID.getText();
+        String pass = txtPass.getText();
+        
+        if (id.isEmpty() || pass.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, rellene todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+        }
+        
+        // Validar la autenticación (esto debe ser adaptado a tu lógica real)
+        if (validarCredenciales(id, pass)) {
+            // Si las credenciales son válidas, mostrar la pantalla de menú principal
+            PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal();
+            menuPrincipal.setVisible(true);
+            this.dispose(); // Cerrar la pantalla de inicio de sesión
+        } else {
+            // Si las credenciales son inválidas, mostrar un mensaje de error
+            JOptionPane.showMessageDialog(this, "Credenciales incorrectas. Inténtelo de nuevo.", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private boolean validarCredenciales(String id, String pass) {
+        // Establecer la conexión a la base de datos
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            // Consulta SQL para verificar las credenciales
+            String sql = "SELECT contraseña FROM cliente WHERE id = ?";
+
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setString(1, id);
+                try (ResultSet rs = stmt.executeQuery()) {
+                    if (rs.next()) {
+                        String contraseñaAlmacenada = rs.getString("contraseña");
+                        return contraseñaAlmacenada.equals(pass);
+                    } else {
+                        // Si no se encuentra ningún registro con el ID dado
+                        return false;
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            // Manejar cualquier error de SQL
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtPass;
