@@ -7,6 +7,11 @@ package frm;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Random;
 
 /**
  *
@@ -74,8 +79,8 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
 
         txtNumCuenta = new javax.swing.JTextField();
         txtMonto = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnGenerarFolio = new javax.swing.JButton();
+        lblGenerarRetiroSinCuenta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,11 +88,16 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
 
         txtMonto.setText("Monto");
 
-        jButton1.setText("Generar Folio");
+        btnGenerarFolio.setText("Generar Folio");
+        btnGenerarFolio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarFolioActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Generar Retiro sin Cuenta");
+        lblGenerarRetiroSinCuenta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblGenerarRetiroSinCuenta.setForeground(new java.awt.Color(255, 255, 255));
+        lblGenerarRetiroSinCuenta.setText("Generar Retiro sin Cuenta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,7 +107,7 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jLabel1))
+                        .addComponent(lblGenerarRetiroSinCuenta))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,30 +115,96 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
                             .addComponent(txtNumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(101, 101, 101)
-                        .addComponent(jButton1)))
+                        .addComponent(btnGenerarFolio)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel1)
+                .addComponent(lblGenerarRetiroSinCuenta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtNumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnGenerarFolio)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private String generarFolioUnico() {
+    // implementa la lógica para generar un folio único
+    return java.util.UUID.randomUUID().toString();
+    }
+    
+    private String generarContraseñaAleatoria() {
+    // Generar una contraseña aleatoria de 8 dígitos
+    Random random = new Random();
+    int contraseñaNum = random.nextInt(90000000) + 10000000; // Números entre 10000000 y 99999999
+    return String.valueOf(contraseñaNum);
+    }
+    
+    private void guardarFolioYContraseña(String numCuenta, double monto, String folioOperacion, String contraseñaRetiro) {
+    // Conectarse a la base de datos y guardar el folio, la contraseña, el número de cuenta y el monto
+    try {
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar");
+        String query = "INSERT INTO retiros_sin_cuenta (numCuenta, monto, folioOperacion, contraseñaRetiro) VALUES (?, ?, ?, ?)";
+        PreparedStatement statement = conn.prepareStatement(query);
+        statement.setString(1, numCuenta);
+        statement.setDouble(2, monto);
+        statement.setString(3, folioOperacion);
+        statement.setString(4, contraseñaRetiro);
+        statement.executeUpdate();
+        conn.close();
+        // Notificar al usuario que el folio y la contraseña han sido generados y guardados
+        javax.swing.JOptionPane.showMessageDialog(this, "Folio y contraseña generados:\nFolio: " + folioOperacion + "\nContraseña: " + contraseñaRetiro);
+    } catch (SQLException e) {
+        e.printStackTrace();
+        // Manejar la excepción apropiadamente
+    }
+    }
+    
+    private void btnGenerarFolioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFolioActionPerformed
+        // Obtener el número de cuenta y la cantidad de saldo ingresados por el usuario
+    String numCuenta = txtNumCuenta.getText();
+    String montoString = txtMonto.getText();
+    
+    // Validar la entrada del usuario
+    if (numCuenta.equals("Número de Cuenta") || montoString.equals("Monto a Retirar")) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingrese un número de cuenta y un monto válido.");
+        return;
+    }
+    
+    // Verificar que el monto sea un valor numérico
+    double monto;
+    try {
+        monto = Double.parseDouble(montoString);
+    } catch (NumberFormatException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingrese un monto válido.");
+        return;
+    }
+    
+    // Verificar que el monto sea positivo
+    if (monto <= 0) {
+        javax.swing.JOptionPane.showMessageDialog(this, "El monto a retirar debe ser mayor que cero.");
+        return;
+    }
+    
+    // Generar un folio único y una contraseña aleatoria
+    String folioOperacion = generarFolioUnico();
+    String contraseñaRetiro = generarContraseñaAleatoria();
+    
+    // Guardar el folio y la contraseña en la base de datos
+    guardarFolioYContraseña(numCuenta, monto, folioOperacion, contraseñaRetiro);
+    }//GEN-LAST:event_btnGenerarFolioActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnGenerarFolio;
+    private javax.swing.JLabel lblGenerarRetiroSinCuenta;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtNumCuenta;
     // End of variables declaration//GEN-END:variables
