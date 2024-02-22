@@ -46,12 +46,12 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jPanel1" max="32767" attributes="0"/>
-                                      <Component id="jPanel2" max="32767" attributes="0"/>
+                                      <Component id="pnlRetiroSinCuenta" max="32767" attributes="0"/>
+                                      <Component id="pnlRegistrarCuenta" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jPanel3" max="32767" attributes="0"/>
+                                      <Component id="pnlHistorial" max="32767" attributes="0"/>
                                       <Component id="jPanel5" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -65,7 +65,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel6" max="32767" attributes="0"/>
+                      <Component id="pnlTransferencia" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -96,15 +96,15 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jPanel5" max="32767" attributes="0"/>
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="pnlRegistrarCuenta" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jPanel1" max="32767" attributes="0"/>
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pnlRetiroSinCuenta" max="32767" attributes="0"/>
+                  <Component id="pnlHistorial" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel6" max="32767" attributes="0"/>
+              <Component id="pnlTransferencia" max="32767" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -139,7 +139,7 @@
         <Property name="text" type="java.lang.String" value="USUARIO"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="pnlRetiroSinCuenta">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -148,6 +148,9 @@
           <Color id="Hand Cursor"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlRetiroSinCuentaMouseClicked"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -215,7 +218,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="pnlRegistrarCuenta">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -224,6 +227,9 @@
           <Color id="Hand Cursor"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlRegistrarCuentaMouseClicked"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -302,7 +308,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel3">
+    <Container class="javax.swing.JPanel" name="pnlHistorial">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -311,6 +317,9 @@
           <Color id="Hand Cursor"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlHistorialMouseClicked"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -375,11 +384,6 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel15">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Martinez\Documents\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\images\082213cb0f9eabb7e6715f59ef7d322a-icono-de-perfil-de-instagram (1).png"/>
-        </Property>
-      </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel5">
       <Properties>
@@ -403,7 +407,7 @@
                           <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                      <Component id="pnlConsultarCuentas" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="13" max="32767" attributes="0"/>
@@ -420,7 +424,7 @@
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <Component id="pnlConsultarCuentas" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -453,7 +457,7 @@
             <Property name="text" type="java.lang.String" value="CONSULTAR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
+        <Component class="javax.swing.JLabel" name="pnlConsultarCuentas">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>
@@ -463,7 +467,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel6">
+    <Container class="javax.swing.JPanel" name="pnlTransferencia">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -472,6 +476,9 @@
           <Color id="Hand Cursor"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlTransferenciaMouseClicked"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">

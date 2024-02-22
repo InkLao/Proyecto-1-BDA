@@ -35,17 +35,17 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        pnlRetiroSinCuenta = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        pnlRegistrarCuenta = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        pnlHistorial = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -55,8 +55,8 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        pnlConsultarCuentas = new javax.swing.JLabel();
+        pnlTransferencia = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -73,8 +73,13 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("USUARIO");
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlRetiroSinCuenta.setBackground(new java.awt.Color(102, 102, 102));
+        pnlRetiroSinCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlRetiroSinCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlRetiroSinCuentaMouseClicked(evt);
+            }
+        });
 
         jLabel6.setToolTipText("");
 
@@ -86,23 +91,23 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel7.setText("SIN CUENTA");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlRetiroSinCuentaLayout = new javax.swing.GroupLayout(pnlRetiroSinCuenta);
+        pnlRetiroSinCuenta.setLayout(pnlRetiroSinCuentaLayout);
+        pnlRetiroSinCuentaLayout.setHorizontalGroup(
+            pnlRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRetiroSinCuentaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel3)
                     .addComponent(jLabel6))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pnlRetiroSinCuentaLayout.setVerticalGroup(
+            pnlRetiroSinCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRetiroSinCuentaLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel6)
                 .addGap(11, 11, 11)
@@ -110,14 +115,19 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRetiroSinCuentaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel16)
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlRegistrarCuenta.setBackground(new java.awt.Color(102, 102, 102));
+        pnlRegistrarCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlRegistrarCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlRegistrarCuentaMouseClicked(evt);
+            }
+        });
 
         jLabel8.setToolTipText("");
 
@@ -129,44 +139,49 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/3534139.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlRegistrarCuentaLayout = new javax.swing.GroupLayout(pnlRegistrarCuenta);
+        pnlRegistrarCuenta.setLayout(pnlRegistrarCuentaLayout);
+        pnlRegistrarCuentaLayout.setHorizontalGroup(
+            pnlRegistrarCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRegistrarCuentaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(pnlRegistrarCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRegistrarCuentaLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(pnlRegistrarCuentaLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlRegistrarCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
                             .addComponent(jLabel9))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        pnlRegistrarCuentaLayout.setVerticalGroup(
+            pnlRegistrarCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRegistrarCuentaLayout.createSequentialGroup()
+                .addGroup(pnlRegistrarCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRegistrarCuentaLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jLabel8)
                         .addGap(10, 10, 10)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(pnlRegistrarCuentaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel17)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlHistorial.setBackground(new java.awt.Color(102, 102, 102));
+        pnlHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlHistorialMouseClicked(evt);
+            }
+        });
 
         jLabel11.setToolTipText("");
 
@@ -175,37 +190,35 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("HISTORIAL");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlHistorialLayout = new javax.swing.GroupLayout(pnlHistorial);
+        pnlHistorial.setLayout(pnlHistorialLayout);
+        pnlHistorialLayout.setHorizontalGroup(
+            pnlHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHistorialLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel22)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(pnlHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlHistorialLayout.createSequentialGroup()
                         .addGap(136, 136, 136)
                         .addComponent(jLabel11))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGroup(pnlHistorialLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pnlHistorialLayout.setVerticalGroup(
+            pnlHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHistorialLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel11)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHistorialLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel22)
                 .addContainerGap())
         );
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\082213cb0f9eabb7e6715f59ef7d322a-icono-de-perfil-de-instagram (1).png")); // NOI18N
 
         jPanel5.setBackground(new java.awt.Color(102, 102, 102));
         jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -217,8 +230,8 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel12.setText("CONSULTAR");
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel13.setText("CUENTAS");
+        pnlConsultarCuentas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        pnlConsultarCuentas.setText("CUENTAS");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -232,7 +245,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addComponent(jLabel18))
-                    .addComponent(jLabel13)
+                    .addComponent(pnlConsultarCuentas)
                     .addComponent(jLabel12))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
@@ -246,15 +259,20 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                         .addGap(17, 17, 17)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13))
+                        .addComponent(pnlConsultarCuentas))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel21)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlTransferencia.setBackground(new java.awt.Color(102, 102, 102));
+        pnlTransferencia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlTransferencia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlTransferenciaMouseClicked(evt);
+            }
+        });
 
         jLabel24.setToolTipText("");
 
@@ -263,28 +281,28 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel27.setText("TRANSFERENCIA");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlTransferenciaLayout = new javax.swing.GroupLayout(pnlTransferencia);
+        pnlTransferencia.setLayout(pnlTransferenciaLayout);
+        pnlTransferenciaLayout.setHorizontalGroup(
+            pnlTransferenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTransferenciaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel25)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlTransferenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27)
                     .addComponent(jLabel24))
                 .addContainerGap(274, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        pnlTransferenciaLayout.setVerticalGroup(
+            pnlTransferenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTransferenciaLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel24)
                 .addGap(33, 33, 33)
                 .addComponent(jLabel27)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTransferenciaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel25)
                 .addContainerGap())
@@ -313,11 +331,11 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addContainerGap()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(pnlRetiroSinCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(pnlRegistrarCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(pnlHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(260, 260, 260)
@@ -325,7 +343,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(pnlTransferencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -347,18 +365,42 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlRegistrarCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlRetiroSinCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlTransferencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pnlRegistrarCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRegistrarCuentaMouseClicked
+        this.dispose();
+        PantallaCrearCuenta pcc = new PantallaCrearCuenta();
+        pcc.setVisible(true);
+    }//GEN-LAST:event_pnlRegistrarCuentaMouseClicked
+
+    private void pnlRetiroSinCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRetiroSinCuentaMouseClicked
+        this.dispose();
+        PantallaRetiroSinCuentaCliente prscc = new PantallaRetiroSinCuentaCliente();
+        prscc.setVisible(true);
+    }//GEN-LAST:event_pnlRetiroSinCuentaMouseClicked
+
+    private void pnlTransferenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTransferenciaMouseClicked
+        this.dispose();
+        PantallaTransferencia pt = new PantallaTransferencia();
+        pt.setVisible(true);
+    }//GEN-LAST:event_pnlTransferenciaMouseClicked
+
+    private void pnlHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlHistorialMouseClicked
+        this.dispose();
+        PantallaHistorial ph = new PantallaHistorial();
+        ph.setVisible(true);
+    }//GEN-LAST:event_pnlHistorialMouseClicked
 
     /**
      * @param args the command line arguments
@@ -400,18 +442,13 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel27;
@@ -422,11 +459,11 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel pnlConsultarCuentas;
+    private javax.swing.JPanel pnlHistorial;
+    private javax.swing.JPanel pnlRegistrarCuenta;
+    private javax.swing.JPanel pnlRetiroSinCuenta;
+    private javax.swing.JPanel pnlTransferencia;
     // End of variables declaration//GEN-END:variables
 }
