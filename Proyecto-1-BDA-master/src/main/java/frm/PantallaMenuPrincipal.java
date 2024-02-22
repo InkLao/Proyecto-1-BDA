@@ -123,7 +123,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel10.setText("CUENTA");
 
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\3534139.png")); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/3534139.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -166,7 +166,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         jLabel11.setToolTipText("");
 
-        jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\2282481.png")); // NOI18N
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/2282481.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("HISTORIAL");
@@ -208,7 +208,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         jLabel18.setToolTipText("");
 
-        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\4365924.png")); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/4365924.png"))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel12.setText("CONSULTAR");
