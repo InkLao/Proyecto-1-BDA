@@ -17,9 +17,13 @@ import javax.swing.JPasswordField;
  */
 public class PantallaIniciarSesion extends javax.swing.JFrame {
     
+    
+//    private static final String URL = "jdbc:mysql://localhost:3306/banco";
+//    private static final String USER = "banco";
+//    private static final String PASSWORD = "12345678";
     private static final String URL = "jdbc:mysql://localhost:3306/banco";
-    private static final String USER = "banco";
-    private static final String PASSWORD = "12345678";
+    private static final String USER = "root";
+    private static final String PASSWORD = "41502Mar";
 
     /**
      * Creates new form PantallaIniciarSesion
@@ -154,6 +158,7 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+   
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
         PantallaLogin pl = new PantallaLogin();
@@ -202,6 +207,7 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
             return false;
         }
     }
+    
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

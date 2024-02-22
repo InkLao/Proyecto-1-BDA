@@ -11,6 +11,8 @@ import java.awt.Color;
  * @author Martinez
  */
 public class PantallaLogin extends javax.swing.JFrame {
+    
+
 
     /**
      * Creates new form PantallaLogin
@@ -215,6 +217,7 @@ public class PantallaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+ 
     private void pnlIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlIniciarSesionMouseClicked
         this.dispose();
         PantallaIniciarSesion pis = new PantallaIniciarSesion();

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
@@ -18,9 +19,12 @@ public class PantallaCrearCuenta extends javax.swing.JFrame {
     //el ID del cliente actual
     private long idClienteActual = 1;
     
+//    private static final String URL = "jdbc:mysql://localhost:3306/banco";
+//    private static final String USER = "banco";
+//    private static final String PASSWORD = "12345678";
     private static final String URL = "jdbc:mysql://localhost:3306/banco";
-    private static final String USER = "banco";
-    private static final String PASSWORD = "12345678";
+    private static final String USER = "root";
+    private static final String PASSWORD = "41502Mar";
 
     /**
      * Creates new form PantallaCrearCuenta
@@ -151,7 +155,7 @@ public class PantallaCrearCuenta extends javax.swing.JFrame {
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
             // Preparar la consulta SQL para insertar una nueva cuenta
             String sql = "INSERT INTO cuenta (fechaApertura, saldo, idCliente) VALUES (?, ?, ?)";
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 // Establecer los parámetros de la consulta
                 statement.setString(1, fechaApertura);
                 statement.setDouble(2, saldo);
@@ -164,14 +168,19 @@ public class PantallaCrearCuenta extends javax.swing.JFrame {
                     // Recuperar el ID generado automáticamente
                     ResultSet generatedKeys = statement.getGeneratedKeys();
                     if (generatedKeys.next()) {
-                    long idCuenta = generatedKeys.getLong(1);
-                    JOptionPane.showMessageDialog(this, "El ID de su cuenta es: " + idCuenta);
+                        long idCuenta = generatedKeys.getLong(1);
+                        JOptionPane.showMessageDialog(this, "El ID de su cuenta es: " + idCuenta);
+                    }
+                    // Cerrar la ventana actual
+                    this.dispose();
+                    // Abrir la pantalla del menú principal
+                    PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal();
+                    menuPrincipal.setVisible(true);
                 }
-                // Aquí podrías mostrar un mensaje de éxito o realizar alguna otra acción
-            } else {
-                System.out.println("Error al crear la cuenta.");
-                // Aquí podrías mostrar un mensaje de error o realizar alguna otra acción
-            }
+                else {
+                    System.out.println("Error al crear la cuenta.");
+                    // Aquí podrías mostrar un mensaje de error o realizar alguna otra acción
+                }
             }
         } catch (SQLException e) {
             System.out.println("Error de conexión o consulta: " + e.getMessage());

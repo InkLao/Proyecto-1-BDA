@@ -17,10 +17,13 @@ import javax.swing.JOptionPane;
  */
 public class PantallaRegistrarUsuario extends javax.swing.JFrame {
     
+//    private static final String URL = "jdbc:mysql://localhost:3306/banco";
+//    private static final String USER = "banco";
+//    private static final String PASSWORD = "12345678";
+    
     private static final String URL = "jdbc:mysql://localhost:3306/banco";
-    private static final String USER = "banco";
-    private static final String PASSWORD = "12345678";
-
+    private static final String USER = "root";
+    private static final String PASSWORD = "41502Mar";
     /**
      * Creates new form PantallaRegistrarUsuario
      */
@@ -243,6 +246,11 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
         txtContraseña.setText("Contraseña");
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         btnVaciar.setText("Vaciar");
 
@@ -391,6 +399,13 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
             // Aquí podrías mostrar un mensaje de error o realizar alguna otra acción
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        PantallaLogin pl = new PantallaLogin();
+        pl.setVisible(true);
+    }//GEN-LAST:event_btnCancelarActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -11,13 +11,12 @@ import java.awt.Color;
  * @author eduar
  */
 public class PantallaMenuPrincipal extends javax.swing.JFrame {
-
     /**
      * Creates new form PantallaMenuPrincipal
+     * @param nombreUsuario
      */
     public PantallaMenuPrincipal() {
         initComponents();
-        
         // Definir un color de fondo (gris azulado oscuro)
         Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
         // Cambiar el color de fondo del formulario
@@ -34,7 +33,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
         pnlRetiroSinCuenta = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -68,10 +67,10 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BIENVENIDO");
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("USUARIO");
+        lblUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setText("USUARIO");
 
         pnlRetiroSinCuenta.setBackground(new java.awt.Color(102, 102, 102));
         pnlRetiroSinCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -83,7 +82,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         jLabel6.setToolTipText("");
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/6362445.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\6362445.png")); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("RETIRO");
@@ -137,7 +136,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel10.setText("CUENTA");
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/3534139.png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\3534139.png")); // NOI18N
 
         javax.swing.GroupLayout pnlRegistrarCuentaLayout = new javax.swing.GroupLayout(pnlRegistrarCuenta);
         pnlRegistrarCuenta.setLayout(pnlRegistrarCuentaLayout);
@@ -185,7 +184,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         jLabel11.setToolTipText("");
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/2282481.png"))); // NOI18N
+        jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\2282481.png")); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("HISTORIAL");
@@ -225,7 +224,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         jLabel18.setToolTipText("");
 
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/4365924.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\4365924.png")); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel12.setText("CONSULTAR");
@@ -276,7 +275,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         jLabel24.setToolTipText("");
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frm/5950200.png"))); // NOI18N
+        jLabel25.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martinez\\Documents\\GitHub\\Proyecto-1-BDA\\Proyecto-1-BDA-master\\images\\5950200.png")); // NOI18N
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel27.setText("TRANSFERENCIA");
@@ -326,7 +325,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                             .addContainerGap()
                                             .addComponent(jLabel1)
-                                            .addGap(140, 140, 140)))
+                                            .addGap(193, 193, 193)))
                                     .addComponent(jLabel15))
                                 .addGroup(layout.createSequentialGroup()
                                     .addContainerGap()
@@ -339,7 +338,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(260, 260, 260)
-                                .addComponent(jLabel2)))
+                                .addComponent(lblUsuario)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -361,7 +360,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                             .addContainerGap()
                             .addComponent(jLabel15))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(lblUsuario)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -377,7 +376,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void pnlRegistrarCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRegistrarCuentaMouseClicked
         this.dispose();
         PantallaCrearCuenta pcc = new PantallaCrearCuenta();
@@ -446,7 +445,6 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel24;
@@ -460,6 +458,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel pnlConsultarCuentas;
     private javax.swing.JPanel pnlHistorial;
     private javax.swing.JPanel pnlRegistrarCuenta;
