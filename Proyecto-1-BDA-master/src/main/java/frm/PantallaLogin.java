@@ -12,14 +12,14 @@ import java.awt.Color;
  */
 public class PantallaLogin extends javax.swing.JFrame {
     
-
+    private String idClienteEnSesion;
 
     /**
      * Creates new form PantallaLogin
      */
-    public PantallaLogin() {
+    public PantallaLogin(String cliente) {
         initComponents();
-        
+        this.idClienteEnSesion = cliente;
         // Definir un color de fondo (gris azulado oscuro)
         Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
         // Cambiar el color de fondo del formulario
@@ -56,7 +56,7 @@ public class PantallaLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaLogin().setVisible(true);
+                new PantallaLogin("").setVisible(true);
             }
         });
     }
@@ -220,19 +220,19 @@ public class PantallaLogin extends javax.swing.JFrame {
  
     private void pnlIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlIniciarSesionMouseClicked
         this.dispose();
-        PantallaIniciarSesion pis = new PantallaIniciarSesion();
+        PantallaIniciarSesion pis = new PantallaIniciarSesion(idClienteEnSesion);
         pis.setVisible(true);
     }//GEN-LAST:event_pnlIniciarSesionMouseClicked
 
     private void pnlRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRegistrarseMouseClicked
         this.dispose();
-        PantallaRegistrarUsuario pru = new PantallaRegistrarUsuario();
+        PantallaRegistrarUsuario pru = new PantallaRegistrarUsuario(idClienteEnSesion);
         pru.setVisible(true);
     }//GEN-LAST:event_pnlRegistrarseMouseClicked
 
     private void pnlRetiroSinCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRetiroSinCuentaMouseClicked
         this.dispose();
-        PantallaRetiroSinCuenta prsc = new PantallaRetiroSinCuenta();
+        PantallaRetiroSinCuenta prsc = new PantallaRetiroSinCuenta(idClienteEnSesion);
         prsc.setVisible(true);
     }//GEN-LAST:event_pnlRetiroSinCuentaMouseClicked
 

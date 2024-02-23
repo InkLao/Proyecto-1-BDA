@@ -18,13 +18,13 @@ import java.util.Random;
  * @author Martinez
  */
 public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
-
+    private String idClienteEnSesion;
     /**
      * Creates new form PantallaRetiroSinCuenta
      */
-    public PantallaRetiroSinCuentaCliente() {
+    public PantallaRetiroSinCuentaCliente(String cliente) {
         initComponents();
-        
+        this.idClienteEnSesion = cliente;
         // Definir un color de fondo (gris azulado oscuro)
         Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
         // Cambiar el color de fondo del formulario
@@ -81,6 +81,7 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
         txtMonto = new javax.swing.JTextField();
         btnGenerarFolio = new javax.swing.JButton();
         lblGenerarRetiroSinCuenta = new javax.swing.JLabel();
+        btnVolver4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,6 +100,13 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
         lblGenerarRetiroSinCuenta.setForeground(new java.awt.Color(255, 255, 255));
         lblGenerarRetiroSinCuenta.setText("Generar Retiro sin Cuenta");
 
+        btnVolver4.setText("Volver");
+        btnVolver4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolver4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,12 +118,13 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
                         .addComponent(lblGenerarRetiroSinCuenta))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnVolver4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnGenerarFolio))
                             .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(btnGenerarFolio)))
+                            .addComponent(txtNumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -128,7 +137,9 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnGenerarFolio)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGenerarFolio)
+                    .addComponent(btnVolver4))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -201,9 +212,17 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
     guardarFolioYContraseña(numCuenta, monto, folioOperacion, contraseñaRetiro);
     }//GEN-LAST:event_btnGenerarFolioActionPerformed
 
+    private void btnVolver4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver4ActionPerformed
+        // TODO add your handling code here:
+        PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal(idClienteEnSesion);
+        menuPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolver4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerarFolio;
+    private javax.swing.JButton btnVolver4;
     private javax.swing.JLabel lblGenerarRetiroSinCuenta;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JTextField txtNumCuenta;

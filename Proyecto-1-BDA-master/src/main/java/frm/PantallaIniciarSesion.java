@@ -16,7 +16,7 @@ import javax.swing.JPasswordField;
  * @author eduar
  */
 public class PantallaIniciarSesion extends javax.swing.JFrame {
-    private String clienteEnSesion;
+    private String idClienteEnSesion;
     
 //    private static final String URL = "jdbc:mysql://localhost:3306/banco";
 //    private static final String USER = "banco";
@@ -28,8 +28,9 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
     /**
      * Creates new form PantallaIniciarSesion
      */
-    public PantallaIniciarSesion() {
+    public PantallaIniciarSesion(String cliente) {
         initComponents();
+         this.idClienteEnSesion = cliente;
         // Definir un color de fondo (gris azulado oscuro)
         Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
         // Cambiar el color de fondo del formulario
@@ -160,12 +161,12 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     public String getIdClienteEnSesion() {
-        return clienteEnSesion;
+        return idClienteEnSesion;
     }
    
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
-        PantallaLogin pl = new PantallaLogin();
+        PantallaLogin pl = new PantallaLogin(idClienteEnSesion);
         pl.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
 
@@ -176,9 +177,9 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
         
         // Validar la autenticación (esto debe ser adaptado a tu lógica real)
         if (validarCredenciales(id, pass)) {
-            clienteEnSesion = id;
+            idClienteEnSesion = id;
             // Si las credenciales son válidas, mostrar la pantalla de menú principal
-            PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal(clienteEnSesion);
+            PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal(idClienteEnSesion);
             menuPrincipal.setVisible(true);
             this.dispose(); // Cerrar la pantalla de inicio de sesión
         } else {
@@ -243,7 +244,7 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaIniciarSesion().setVisible(true);
+                new PantallaIniciarSesion("").setVisible(true);
             }
         });
     }

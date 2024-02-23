@@ -13,13 +13,14 @@ import java.awt.event.FocusListener;
  * @author Martinez
  */
 public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
+    private String idClienteEnSesion;
 
     /**
      * Creates new form PantallaRetiroSinCuenta
      */
-    public PantallaRetiroSinCuenta() {
+    public PantallaRetiroSinCuenta(String cliente) {
         initComponents();
-        
+        this.idClienteEnSesion = cliente;
         // Definir un color de fondo (gris azulado oscuro)
         Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
         // Cambiar el color de fondo del formulario
@@ -77,6 +78,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
         txtClave = new javax.swing.JTextField();
         btnRetirar = new javax.swing.JButton();
         lblRetiroSinCuenta = new javax.swing.JLabel();
+        btnVolver4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,6 +97,13 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
         lblRetiroSinCuenta.setForeground(new java.awt.Color(255, 255, 255));
         lblRetiroSinCuenta.setText("Retiro sin Cuenta");
 
+        btnVolver4.setText("Volver");
+        btnVolver4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolver4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,17 +111,17 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtNumFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNumFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnVolver4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRetirar)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(lblRetiroSinCuenta)))
                 .addContainerGap(17, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRetirar)
-                .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +133,9 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnRetirar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRetirar)
+                    .addComponent(btnVolver4))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -135,9 +146,19 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRetirarActionPerformed
 
+    private void btnVolver4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver4ActionPerformed
+        // TODO add your handling code here:
+        PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal(idClienteEnSesion);
+        menuPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolver4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRetirar;
+    private javax.swing.JButton btnVolver2;
+    private javax.swing.JButton btnVolver3;
+    private javax.swing.JButton btnVolver4;
     private javax.swing.JLabel lblRetiroSinCuenta;
     private javax.swing.JTextField txtClave;
     private javax.swing.JTextField txtNumFolio;

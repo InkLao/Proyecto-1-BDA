@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author eduar
  */
 public class PantallaRegistrarUsuario extends javax.swing.JFrame {
-    
+    private String idClienteEnSesion;
 //    private static final String URL = "jdbc:mysql://localhost:3306/banco";
 //    private static final String USER = "banco";
 //    private static final String PASSWORD = "12345678";
@@ -27,9 +27,9 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
     /**
      * Creates new form PantallaRegistrarUsuario
      */
-    public PantallaRegistrarUsuario() {
+    public PantallaRegistrarUsuario(String cliente) {
         initComponents();
-        
+         this.idClienteEnSesion = cliente;
         // Definir un color de fondo (gris azulado oscuro)
         Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
         // Cambiar el color de fondo del formulario
@@ -381,7 +381,7 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
 
                             // Cerrar la ventana actual y abrir la ventana de login
                             this.dispose(); // Cerrar la ventana actual
-                            PantallaLogin login = new PantallaLogin(); // Crear instancia de la ventana de login
+                            PantallaLogin login = new PantallaLogin(idClienteEnSesion); // Crear instancia de la ventana de login
                             login.setVisible(true); // Mostrar la ventana de login
                             } else {
                                 System.out.println("Error al registrar dirección.");
@@ -403,7 +403,7 @@ public class PantallaRegistrarUsuario extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        PantallaLogin pl = new PantallaLogin();
+        PantallaLogin pl = new PantallaLogin(idClienteEnSesion);
         pl.setVisible(true);
     }//GEN-LAST:event_btnCancelarActionPerformed
     

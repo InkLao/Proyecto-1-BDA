@@ -21,6 +21,7 @@ frm\PantallaIniciarSesion$5.class
 interfaces\ICliente.class
 frm\PantallaHistorial$1.class
 frm\PantallaCrearCuenta$1.class
+frm\PantallaTransferencia$4.class
 frm\PantallaIniciarSesion$2.class
 frm\PantallaMenuPrincipal$2.class
 frm\PantallaLogin.class
@@ -46,7 +47,9 @@ frm\PantallaCrearCuenta$2.class
 frm\PantallaRetiroSinCuenta$3.class
 frm\PantallaRegistrarUsuario.class
 frm\PantallaRegistrarUsuario$6.class
+frm\PantallaRetiroSinCuentaCliente$4.class
 frm\PantallaTransferencia.class
+frm\PantallaCrearCuenta$3.class
 frm\PantallaMenuPrincipal$4.class
 frm\PantallaRegistrarUsuario$7.class
 frm\PantallaCrearCuenta.class
@@ -55,4 +58,6 @@ frm\PantallaLogin$1.class
 frm\PantallaRetiroSinCuentaCliente$1.class
 interfaces\IConexion.class
 frm\PantallaIniciarSesion.class
+frm\PantallaMenuPrincipal$7.class
+frm\PantallaRetiroSinCuenta$4.class
 frm\PantallaTransferencia$2.class
