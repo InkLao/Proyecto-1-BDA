@@ -12,6 +12,7 @@ import java.awt.Color;
  */
 public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private String idClienteEnSesion;
+    private Conversiones conversiones;
     /**
      * Creates new form PantallaMenuPrincipal
      * @param cliente
@@ -24,6 +25,16 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         getContentPane().setBackground(grisAzuladoOscuro);
         
         this.idClienteEnSesion = cliente;
+        this.conversiones = new Conversiones();
+        
+        // Obtener el nombre del cliente y mostrarlo en lblCliente
+        String nombreCliente = conversiones.obtenerNombreCliente(idClienteEnSesion);
+        if (nombreCliente != null) {
+            lblCliente.setText(nombreCliente);
+        } else {
+            lblCliente.setText("Cliente Desconocido");
+        }
+        
     }
 
     /**
@@ -36,7 +47,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        lblUsuario = new javax.swing.JLabel();
+        lblCliente = new javax.swing.JLabel();
         pnlRetiroSinCuenta = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -71,10 +82,10 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BIENVENIDO");
 
-        lblUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        lblUsuario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsuario.setText("USUARIO");
+        lblCliente.setBackground(new java.awt.Color(255, 255, 255));
+        lblCliente.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblCliente.setForeground(new java.awt.Color(255, 255, 255));
+        lblCliente.setText("USUARIO");
 
         pnlRetiroSinCuenta.setBackground(new java.awt.Color(102, 102, 102));
         pnlRetiroSinCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -356,7 +367,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                                         .addComponent(pnlConsultarCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(260, 260, 260)
-                                .addComponent(lblUsuario)))
+                                .addComponent(lblCliente)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -375,14 +386,12 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(jLabel5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel15))))
+                            .addComponent(jLabel15)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblUsuario)
+                .addComponent(lblCliente)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(pnlConsultarCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -494,7 +503,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblCliente;
     private javax.swing.JLabel lblcuenttas;
     private javax.swing.JPanel pnlConsultarCuentas;
     private javax.swing.JPanel pnlHistorial;

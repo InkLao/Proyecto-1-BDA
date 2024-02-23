@@ -40,12 +40,12 @@ public class Conversiones {
     public String obtenerNombreCliente(String idCliente) {
         String nombreCliente = null;
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar")) {
-            String sql = "SELECT nombre FROM clientes WHERE id = ?";
+            String sql = "SELECT nombres FROM cliente WHERE id = ?";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, idCliente);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (resultSet.next()) {
-                        nombreCliente = resultSet.getString("nombre");
+                        nombreCliente = resultSet.getString("nombres");
                     }
                 }
             }
