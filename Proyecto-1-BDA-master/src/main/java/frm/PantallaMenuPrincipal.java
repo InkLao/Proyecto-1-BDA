@@ -399,7 +399,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
     private void pnlTransferenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTransferenciaMouseClicked
         this.dispose();
-        PantallaTransferencia pt = new PantallaTransferencia();
+        PantallaTransferencia pt = new PantallaTransferencia(idClienteEnSesion);
         pt.setVisible(true);
     }//GEN-LAST:event_pnlTransferenciaMouseClicked
 
