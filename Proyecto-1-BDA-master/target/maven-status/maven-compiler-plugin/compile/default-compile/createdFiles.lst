@@ -1,6 +1,8 @@
 frm\PantallaLogin$2.class
+frm\PantallaConsultarCuentas$1.class
 frm\PantallaIniciarSesion$4.class
 frm\PantallaRetiroSinCuenta$1.class
+frm\PantallaConsultarCuentas.class
 frm\PantallaRegistrarUsuario$8.class
 frm\PantallaRegistrarUsuario$4.class
 frm\PantallaRetiroSinCuenta.class
@@ -8,9 +10,12 @@ frm\PantallaIniciarSesion$1.class
 objetos\Cliente.class
 frm\PantallaMenuPrincipal$3.class
 frm\PantallaRegistrarUsuario$1.class
+frm\PantallaConsultarCuentas$2.class
 frm\PantallaLogin$3.class
 frm\PantallaRegistrarUsuario$5.class
+frm\PantallaMenuPrincipal$6.class
 frm\PantallaRegistrarUsuario$11.class
+frm\PantallaIniciarSesion$5.class
 interfaces\ICliente.class
 frm\PantallaHistorial$1.class
 frm\PantallaCrearCuenta$1.class
@@ -24,6 +29,7 @@ datos\ClienteDAO.class
 frm\PantallaRetiroSinCuentaCliente.class
 frm\PantallaHistorial.class
 frm\PantallaMenuPrincipal$5.class
+frm\Conversiones.class
 frm\PantallaTransferencia$1.class
 excepciones\PersistenciaException.class
 frm\PantallaLogin$4.class
