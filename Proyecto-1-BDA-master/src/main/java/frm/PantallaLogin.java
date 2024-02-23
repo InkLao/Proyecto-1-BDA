@@ -99,9 +99,9 @@ public class PantallaLogin extends javax.swing.JFrame {
             .addGroup(pnlRegistrarseLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel15)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         pnlRegistrarseLayout.setVerticalGroup(
             pnlRegistrarseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,7 +131,7 @@ public class PantallaLogin extends javax.swing.JFrame {
             .addGroup(pnlRetiroSinCuentaLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel16)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -163,7 +163,7 @@ public class PantallaLogin extends javax.swing.JFrame {
             .addGroup(pnlIniciarSesionLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(33, 33, 33)
                 .addComponent(jLabel17)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

@@ -152,7 +152,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
     private boolean deducirSaldoCuenta(long numCuenta, double monto) {
         try {
         // Conectar a la base de datos
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "banco", "12345678");
         
         // Verificar si hay saldo suficiente en la cuenta
         String querySaldo = "SELECT saldo FROM cuenta WHERE numCuenta = ?";
@@ -191,7 +191,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
         private void realizarRetiroSinCuenta(String folioOperacion, String contraseñaRetiro) {
         // Conectar a la base de datos y verificar si el folio y la clave son válidos
             try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "banco", "12345678");
             String query = "SELECT * FROM transaccion WHERE folioOperacion = ? AND contraseñaRetiro = ?";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, folioOperacion);

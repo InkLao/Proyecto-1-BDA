@@ -161,7 +161,7 @@ public class PantallaRetiroSinCuentaCliente extends javax.swing.JFrame {
     private void guardarFolioYContraseña(String numCuenta, double monto, String folioOperacion, String contraseñaRetiro) {
     // Conectarse a la base de datos y guardar el folio, la contraseña, el número de cuenta y el monto
     try {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "banco", "12345678");
         String query = "INSERT INTO transaccion (numCuenta, monto, folioOperacion, contraseñaRetiro) VALUES (?, ?, ?, ?)";
         PreparedStatement statement = conn.prepareStatement(query);
         statement.setString(1, numCuenta);

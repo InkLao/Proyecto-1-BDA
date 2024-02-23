@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class Conversiones {
     public List<List<Object>> obtenerCuentasCliente(String idCliente) {
         List<List<Object>> cuentas = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "banco", "12345678")) {
             String sql = "SELECT * FROM cuenta WHERE idCliente = ?";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, idCliente);
@@ -39,7 +39,7 @@ public class Conversiones {
     
     public String obtenerNombreCliente(String idCliente) {
         String nombreCliente = null;
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "banco", "12345678")) {
             String sql = "SELECT nombres FROM cliente WHERE id = ?";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
                 statement.setString(1, idCliente);

@@ -23,8 +23,8 @@ public class PantallaTransferencia extends javax.swing.JFrame {
     private String idClienteEnSesion;
     
     private static final String URL = "jdbc:mysql://localhost:3306/banco";
-    private static final String USER = "root";
-    private static final String PASSWORD = "41502Mar";
+    private static final String USER = "banco";
+    private static final String PASSWORD = "12345678";
     
     /**
      * Creates new form PantallaTransferencia
