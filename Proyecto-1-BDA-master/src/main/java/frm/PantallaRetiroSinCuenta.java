@@ -7,6 +7,12 @@ package frm;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -131,8 +137,83 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Método para deducir el saldo de una cuenta
+    private boolean deducirSaldoCuenta(long numCuenta, double monto) {
+        try {
+        // Conectar a la base de datos
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar");
+        
+        // Verificar si hay saldo suficiente en la cuenta
+        String querySaldo = "SELECT saldo FROM cuenta WHERE numCuenta = ?";
+        PreparedStatement psSaldo = conn.prepareStatement(querySaldo);
+        psSaldo.setLong(1, numCuenta);
+        ResultSet rsSaldo = psSaldo.executeQuery();
+        if (rsSaldo.next()) {
+            double saldoActual = rsSaldo.getDouble("saldo");
+            if (saldoActual >= monto) {
+                // Actualizar el saldo de la cuenta
+                double nuevoSaldo = saldoActual - monto;
+                String queryUpdate = "UPDATE cuenta SET saldo = ? WHERE numCuenta = ?";
+                PreparedStatement psUpdate = conn.prepareStatement(queryUpdate);
+                psUpdate.setDouble(1, nuevoSaldo);
+                psUpdate.setLong(2, numCuenta);
+                int filasActualizadas = psUpdate.executeUpdate();
+                
+                // Verificar si se actualizó correctamente
+                if (filasActualizadas > 0) {
+                    // Cerrar la conexión y retornar true (éxito)
+                    conn.close();
+                    return true;
+                }
+            }
+        }
+        
+        // Cerrar la conexión en caso de falla y retornar false (fallo)
+        conn.close();
+        return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        }
+    
+        private void realizarRetiroSinCuenta(String folioOperacion, String contraseñaRetiro) {
+        // Conectar a la base de datos y verificar si el folio y la clave son válidos
+            try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar");
+            String query = "SELECT * FROM retiros_sin_cuenta WHERE folioOperacion = ? AND contraseñaRetiro = ?";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, folioOperacion);
+            statement.setString(2, contraseñaRetiro);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                // Si el retiro es válido, proceder con la operación de retiro
+                // Actualizar el saldo en la cuenta correspondiente
+                long cuentaOrigen = resultSet.getLong("cuentaOrigen");
+                double monto = resultSet.getDouble("monto");
+                if (deducirSaldoCuenta(cuentaOrigen, monto)) {
+                    JOptionPane.showMessageDialog(this, "Retiro sin cuenta realizado con éxito.");
+                } else {
+                    JOptionPane.showMessageDialog(this, "No hay saldo suficiente para realizar el retiro.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Folio o contraseña incorrectos.");
+            }
+
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al procesar el retiro sin cuenta.");
+        }
+    }   
+    
     private void btnRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetirarActionPerformed
-        // TODO add your handling code here:
+        String folioOperacion = txtNumFolio.getText();
+        String contraseñaRetiro = txtClave.getText();
+        // Realizar operaciones de retiro sin cuenta utilizando los datos ingresados
+        // por el usuario, como folio y clave
+        realizarRetiroSinCuenta(folioOperacion, contraseñaRetiro);
     }//GEN-LAST:event_btnRetirarActionPerformed
 
 
