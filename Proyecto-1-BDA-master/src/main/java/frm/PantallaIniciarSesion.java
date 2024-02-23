@@ -16,7 +16,7 @@ import javax.swing.JPasswordField;
  * @author eduar
  */
 public class PantallaIniciarSesion extends javax.swing.JFrame {
-    
+    private String clienteEnSesion;
     
 //    private static final String URL = "jdbc:mysql://localhost:3306/banco";
 //    private static final String USER = "banco";
@@ -30,7 +30,6 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
      */
     public PantallaIniciarSesion() {
         initComponents();
-        
         // Definir un color de fondo (gris azulado oscuro)
         Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
         // Cambiar el color de fondo del formulario
@@ -76,6 +75,8 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
             }
         });
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -157,7 +158,10 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public String getIdClienteEnSesion() {
+        return clienteEnSesion;
+    }
    
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
@@ -172,8 +176,9 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
         
         // Validar la autenticación (esto debe ser adaptado a tu lógica real)
         if (validarCredenciales(id, pass)) {
+            clienteEnSesion = id;
             // Si las credenciales son válidas, mostrar la pantalla de menú principal
-            PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal();
+            PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal(clienteEnSesion);
             menuPrincipal.setVisible(true);
             this.dispose(); // Cerrar la pantalla de inicio de sesión
         } else {
@@ -208,6 +213,40 @@ public class PantallaIniciarSesion extends javax.swing.JFrame {
         }
     }
     
+     /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PantallaConsultarCuentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PantallaConsultarCuentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PantallaConsultarCuentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PantallaConsultarCuentas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PantallaIniciarSesion().setVisible(true);
+            }
+        });
+    }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

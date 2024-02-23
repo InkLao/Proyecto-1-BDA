@@ -16,8 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class PantallaCrearCuenta extends javax.swing.JFrame {
     
-    //el ID del cliente actual
-    private long idClienteActual = 1;
+    private String idClienteEnSesion;
     
 //    private static final String URL = "jdbc:mysql://localhost:3306/banco";
 //    private static final String USER = "banco";
@@ -29,8 +28,9 @@ public class PantallaCrearCuenta extends javax.swing.JFrame {
     /**
      * Creates new form PantallaCrearCuenta
      */
-    public PantallaCrearCuenta() {
+    public PantallaCrearCuenta(String cliente) {
         initComponents();
+        this.idClienteEnSesion = cliente;
         
         // Obtener la fecha del sistema y mostrarla en el campo de texto txtFechaApertura
         LocalDate fechaActual = LocalDate.now();
@@ -42,7 +42,7 @@ public class PantallaCrearCuenta extends javax.swing.JFrame {
         txtFechaApertura.setEnabled(false);
 
         // Mostrar el ID del cliente actual en el campo de texto txtIDCliente
-        txtIDCliente.setText(String.valueOf(idClienteActual));
+        txtIDCliente.setText(String.valueOf(idClienteEnSesion));
 
         // Deshabilitar el campo de texto txtIDCliente
         txtIDCliente.setEnabled(false);
@@ -79,7 +79,7 @@ public class PantallaCrearCuenta extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaCrearCuenta().setVisible(true);
+                new PantallaCrearCuenta("").setVisible(true);
             }
         });
     }
@@ -149,7 +149,7 @@ public class PantallaCrearCuenta extends javax.swing.JFrame {
         // Obtener los datos del formulario
         double saldo = Double.parseDouble(txtSaldo.getText());
         String fechaApertura = txtFechaApertura.getText();
-        long idCliente = idClienteActual;
+        long idCliente = Long.parseLong(idClienteEnSesion);
 
         // Establecer la conexión a la base de datos
         try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
@@ -174,7 +174,7 @@ public class PantallaCrearCuenta extends javax.swing.JFrame {
                     // Cerrar la ventana actual
                     this.dispose();
                     // Abrir la pantalla del menú principal
-                    PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal();
+                    PantallaMenuPrincipal menuPrincipal = new PantallaMenuPrincipal(idClienteEnSesion);
                     menuPrincipal.setVisible(true);
                 }
                 else {

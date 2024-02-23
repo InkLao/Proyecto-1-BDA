@@ -8,19 +8,22 @@ import java.awt.Color;
 
 /**
  *
- * @author eduar
+ * @author Martinez
  */
 public class PantallaMenuPrincipal extends javax.swing.JFrame {
+    private String idClienteEnSesion;
     /**
      * Creates new form PantallaMenuPrincipal
-     * @param nombreUsuario
+     * @param cliente
      */
-    public PantallaMenuPrincipal() {
+    public PantallaMenuPrincipal(String cliente) {
         initComponents();
         // Definir un color de fondo (gris azulado oscuro)
         Color grisAzuladoOscuro = new Color(30, 36, 44); // Valores RGB
         // Cambiar el color de fondo del formulario
         getContentPane().setBackground(grisAzuladoOscuro);
+        
+        this.idClienteEnSesion = cliente;
     }
 
     /**
@@ -50,11 +53,11 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        pnlConsultarCuentas = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        pnlConsultarCuentas = new javax.swing.JLabel();
+        lblcuenttas = new javax.swing.JLabel();
         pnlTransferencia = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -219,8 +222,13 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel5.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlConsultarCuentas.setBackground(new java.awt.Color(102, 102, 102));
+        pnlConsultarCuentas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pnlConsultarCuentas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlConsultarCuentasMouseClicked(evt);
+            }
+        });
 
         jLabel18.setToolTipText("");
 
@@ -229,37 +237,37 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel12.setText("CONSULTAR");
 
-        pnlConsultarCuentas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        pnlConsultarCuentas.setText("CUENTAS");
+        lblcuenttas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblcuenttas.setText("CUENTAS");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlConsultarCuentasLayout = new javax.swing.GroupLayout(pnlConsultarCuentas);
+        pnlConsultarCuentas.setLayout(pnlConsultarCuentasLayout);
+        pnlConsultarCuentasLayout.setHorizontalGroup(
+            pnlConsultarCuentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlConsultarCuentasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(pnlConsultarCuentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlConsultarCuentasLayout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addComponent(jLabel18))
-                    .addComponent(pnlConsultarCuentas)
+                    .addComponent(lblcuenttas)
                     .addComponent(jLabel12))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+        pnlConsultarCuentasLayout.setVerticalGroup(
+            pnlConsultarCuentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlConsultarCuentasLayout.createSequentialGroup()
+                .addGroup(pnlConsultarCuentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlConsultarCuentasLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jLabel18)
                         .addGap(17, 17, 17)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlConsultarCuentas))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(lblcuenttas))
+                    .addGroup(pnlConsultarCuentasLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel21)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -335,7 +343,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(pnlHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                        .addComponent(pnlConsultarCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(260, 260, 260)
                                 .addComponent(lblUsuario)))
@@ -363,7 +371,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
                 .addComponent(lblUsuario)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlConsultarCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnlRegistrarCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -379,7 +387,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     
     private void pnlRegistrarCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlRegistrarCuentaMouseClicked
         this.dispose();
-        PantallaCrearCuenta pcc = new PantallaCrearCuenta();
+        PantallaCrearCuenta pcc = new PantallaCrearCuenta(idClienteEnSesion);
         pcc.setVisible(true);
     }//GEN-LAST:event_pnlRegistrarCuentaMouseClicked
 
@@ -391,7 +399,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
 
     private void pnlTransferenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTransferenciaMouseClicked
         this.dispose();
-        PantallaTransferencia pt = new PantallaTransferencia();
+        PantallaTransferencia pt = new PantallaTransferencia(idClienteEnSesion);
         pt.setVisible(true);
     }//GEN-LAST:event_pnlTransferenciaMouseClicked
 
@@ -400,6 +408,13 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         PantallaHistorial ph = new PantallaHistorial();
         ph.setVisible(true);
     }//GEN-LAST:event_pnlHistorialMouseClicked
+
+    private void pnlConsultarCuentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlConsultarCuentasMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        PantallaConsultarCuentas pcc = new PantallaConsultarCuentas(idClienteEnSesion);
+        pcc.setVisible(true);
+    }//GEN-LAST:event_pnlConsultarCuentasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -431,7 +446,7 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaMenuPrincipal().setVisible(true);
+                new PantallaMenuPrincipal("").setVisible(true);
             }
         });
     }
@@ -457,9 +472,9 @@ public class PantallaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JLabel pnlConsultarCuentas;
+    private javax.swing.JLabel lblcuenttas;
+    private javax.swing.JPanel pnlConsultarCuentas;
     private javax.swing.JPanel pnlHistorial;
     private javax.swing.JPanel pnlRegistrarCuenta;
     private javax.swing.JPanel pnlRetiroSinCuenta;

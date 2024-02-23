@@ -52,7 +52,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="pnlHistorial" max="32767" attributes="0"/>
-                                      <Component id="jPanel5" max="32767" attributes="0"/>
+                                      <Component id="pnlConsultarCuentas" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -95,7 +95,7 @@
               <Component id="lblUsuario" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jPanel5" max="32767" attributes="0"/>
+                  <Component id="pnlConsultarCuentas" max="32767" attributes="0"/>
                   <Component id="pnlRegistrarCuenta" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -385,7 +385,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel15">
     </Component>
-    <Container class="javax.swing.JPanel" name="jPanel5">
+    <Container class="javax.swing.JPanel" name="pnlConsultarCuentas">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -394,6 +394,9 @@
           <Color id="Hand Cursor"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlConsultarCuentasMouseClicked"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -407,7 +410,7 @@
                           <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="pnlConsultarCuentas" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblcuenttas" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="13" max="32767" attributes="0"/>
@@ -424,7 +427,7 @@
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="pnlConsultarCuentas" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblcuenttas" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -457,7 +460,7 @@
             <Property name="text" type="java.lang.String" value="CONSULTAR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="pnlConsultarCuentas">
+        <Component class="javax.swing.JLabel" name="lblcuenttas">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>
