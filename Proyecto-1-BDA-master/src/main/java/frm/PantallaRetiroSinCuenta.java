@@ -181,7 +181,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
         // Conectar a la base de datos y verificar si el folio y la clave son válidos
             try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banco", "root", "41502Mar");
-            String query = "SELECT * FROM retiros_sin_cuenta WHERE folioOperacion = ? AND contraseñaRetiro = ?";
+            String query = "SELECT * FROM transaccion WHERE folioOperacion = ? AND contraseñaRetiro = ?";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, folioOperacion);
             statement.setString(2, contraseñaRetiro);
