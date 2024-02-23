@@ -76,7 +76,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
         txtNumFolio = new javax.swing.JTextField();
         txtClave = new javax.swing.JTextField();
         btnRetirar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblRetiroSinCuenta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,9 +91,9 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Retiro sin Cuenta");
+        lblRetiroSinCuenta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblRetiroSinCuenta.setForeground(new java.awt.Color(255, 255, 255));
+        lblRetiroSinCuenta.setText("Retiro sin Cuenta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,7 +107,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
                         .addComponent(txtNumFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel1)))
+                        .addComponent(lblRetiroSinCuenta)))
                 .addContainerGap(17, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -118,7 +118,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(jLabel1)
+                .addComponent(lblRetiroSinCuenta)
                 .addGap(18, 18, 18)
                 .addComponent(txtNumFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -138,7 +138,7 @@ public class PantallaRetiroSinCuenta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRetirar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblRetiroSinCuenta;
     private javax.swing.JTextField txtClave;
     private javax.swing.JTextField txtNumFolio;
     // End of variables declaration//GEN-END:variables

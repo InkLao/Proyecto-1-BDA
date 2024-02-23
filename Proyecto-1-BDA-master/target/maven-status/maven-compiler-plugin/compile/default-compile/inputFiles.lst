@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Martinez\Documents\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\excepciones\PersistenciaException.java
 C:\Users\Martinez\Documents\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaTransferencia.java
 C:\Users\Martinez\Documents\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaCrearCuenta.java
@@ -16,3 +17,21 @@ C:\Users\Martinez\Documents\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main
 C:\Users\Martinez\Documents\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaIniciarSesion.java
 C:\Users\Martinez\Documents\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaHistorial.java
 C:\Users\Martinez\Documents\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\interfaces\IConexion.java
+=======
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\datos\ClienteDAO.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaLogin.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaHistorial.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaMenuPrincipal.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\objetos\Cliente.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\interfaces\ICliente.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\datos\ConexionBD.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaIniciarSesion.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaRetiroSinCuenta.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaTransferencia.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\com\mycompany\proyectobanco\proyectoBanco.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\excepciones\PersistenciaException.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\interfaces\IConexion.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaCrearCuenta.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaRegistrarUsuario.java
+C:\Users\eduar\OneDrive\Documentos\GitHub\Proyecto-1-BDA\Proyecto-1-BDA-master\src\main\java\frm\PantallaRetiroSinCuentaCliente.java
+>>>>>>> be2f579f56f18801ec150388869b0701d4f67bb3

@@ -1,39 +1,45 @@
 -- Crea la base de datos del banco
 CREATE DATABASE banco;
-
 -- Selecciona la base de datos banco
-USE banco;
-
--- Crear la tabla Cliente
-CREATE TABLE Cliente (
-    id_cliente INT PRIMARY KEY,
-    nombre VARCHAR(50),
-    apellidoPaterno VARCHAR(50),
-    apellidoMaterno VARCHAR(50),
-    domicilio VARCHAR(255),
-    fechaNacimiento DATE
+use banco;
+-- Crea la tabla cliente
+CREATE TABLE cliente (
+    id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nombres VARCHAR(30) NOT NULL,
+    ap_paterno VARCHAR(20) NOT NULL,
+    ap_materno VARCHAR(20) NOT NULL,
+    fechaNacimiento DATE NOT NULL,
+    contraseña VARCHAR(50) NOT NULL
 );
-
--- Crear la tabla Cuenta
-CREATE TABLE Cuenta (
-    numeroCuenta INT PRIMARY KEY,
-    fechaApertura DATE,
-    saldo INT,
-    id_cliente INT,
-    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
+-- Crea la tabla direccion
+CREATE TABLE direccion (
+    id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    calle VARCHAR(50),
+    colonia VARCHAR(50),
+    codigoPostal VARCHAR(20),
+    numeroExterior VARCHAR(20),
+    idCliente BIGINT,
+    FOREIGN KEY (idCliente) REFERENCES cliente (id)
 );
-
--- Crear la tabla Transaccion
-CREATE TABLE Transaccion (
-    id_transaccion INT PRIMARY KEY,
+-- Crea la tabla cuenta
+CREATE TABLE cuenta (
+    numCuenta BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    fechaApertura DATE NOT NULL,
+    saldo decimal(15,2) NOT NULL DEFAULT 0.00,
+    idCliente BIGINT NOT NULL,
+    FOREIGN KEY (idCliente) REFERENCES cliente (id)
+);
+-- Crea la tabla transaccion
+CREATE TABLE transaccion (
+    id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    monto decimal(15,2) NOT NULL,
+    fechaOperacion DATETIME NOT NULL,
     tipo VARCHAR(50),
-    fechaTransaccion DATE,
-    monto INT,
-    numero_cuenta_id INT,
-    numero_cuenta_destino INT,
-    id_cliente INT,
-    FOREIGN KEY (numero_cuenta_id) REFERENCES Cuenta(numeroCuenta),
-    FOREIGN KEY (numero_cuenta_destino) REFERENCES Cuenta(numeroCuenta),
-    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
+    folioOperacion VARCHAR(12),
+    contraseñaRetiro VARCHAR(8),
+    cuentaOrigen BIGINT,
+    cuentaDestino BIGINT,
+    FOREIGN KEY (cuentaOrigen) REFERENCES cuenta (numCuenta),
+    FOREIGN KEY (cuentaDestino) REFERENCES cuenta (numCuenta)
 );
 
